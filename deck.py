@@ -20,3 +20,18 @@ def shuffle():
 print("Unshuffled deck: ", deck)
 shuffle()
 print("Shuffled deck: ", deck)
+
+def deal():
+    ### STEP 2
+    ### END STEP 2
+
+# Starter Code 2
+players = list()
+for i in range(5):
+    players.append(list())
+j = 0
+while len(deck) != 0:
+    players[j%5].append(deal())
+    j += 1
+for i in range(5):
+    print("Hand %d:" % (i), players[i])

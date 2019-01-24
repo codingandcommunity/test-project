@@ -23,6 +23,7 @@ print("Shuffled deck: ", deck)
 
 def deal():
     ### STEP 2
+    return deck.pop()
     ### END STEP 2
 
 # Starter Code 2

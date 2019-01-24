@@ -8,7 +8,12 @@ deck = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS",
 
 def shuffle():
     ### STEP 1
-
+    for i in range(0, 100):
+        j = random.randint(0, 51)
+        k = random.randint(0, 51)
+        temp = deck[j]
+        deck[j] = deck[k]
+        deck[k] = temp
     ### END STEP 1
 
 # Starter Code 1

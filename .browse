@@ -1,0 +1,5 @@
+{
+    "name": "Test Project",
+    "description": "Test description",
+    "thumbnail": "https://blog.golang.org/gopher/header.jpg"
+}

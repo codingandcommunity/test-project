@@ -17,13 +17,13 @@ def shuffle(deck):
     ### END STEP 1
 
 # Starter Code 1
-print("Unshuffled deck: ", deck)
+print("Unshuffled deck: ", deck) 
 shuffle(deck)
 print("Shuffled deck: ", deck)
 
 def deal(deck1,deck2):
     ### STEP 2
-
+	pass
     ### END STEP 2
 
 # Starter Code 2

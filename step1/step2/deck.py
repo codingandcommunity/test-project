@@ -14,12 +14,15 @@ def shuffle(deck):
         temp = deck[j]
         deck[j] = deck[k]
         deck[k] = temp
+        return deck
     ### END STEP 1
 
 # Starter Code 1
+'''
 print("Unshuffled deck: ", deck) 
 shuffle(deck)
 print("Shuffled deck: ", deck)
+'''
 
 def deal(deck1,deck2):
     ### STEP 2
@@ -32,7 +35,7 @@ players = list()
 for i in range(2):
     players.append(list())
 j = 0
-
+'''
 while len(deck) != 0:
     deal(deck,players[j%2])
     j += 1
@@ -43,4 +46,4 @@ shuffle(players[0])
 shuffle(players[1])
 for i in range(2):
     print("Hand %d:" % (i), players[i])
-    
+'''

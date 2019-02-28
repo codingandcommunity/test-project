@@ -6,4 +6,3 @@ You are going to start to add to your decks uses by creating new functions.
 
 In the first step you are going to add your first function called "shuffle".  
 ### Click step 1 to start!
-Hi 

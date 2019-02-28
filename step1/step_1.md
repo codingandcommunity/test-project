@@ -8,7 +8,7 @@ jump to: @step1.md
 ## STEP 1
 ---
 
-Here we'll create a function to shuffle the deck.  
+Here we'll create a function to shuffle the deck. It takes one argument a "deck" which is just a list of cards
 // more text //
 
 

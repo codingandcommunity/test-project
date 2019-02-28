@@ -13,5 +13,5 @@ if __name__ == '__main__':
         "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC",
         "AD", "2D", "3D", "4D", "5D", "6D", "7D", "8D", "9D", "10D", "JD", "QD", "KD"]
 	print("Unshuffled deck: ", deck)
-	deck = shuffle(deck)
+	newDeck = shuffle(deck)
 	print("Shuffled deck: ", newDeck)

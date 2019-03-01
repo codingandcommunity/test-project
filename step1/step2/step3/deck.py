@@ -10,10 +10,38 @@ def shuffle(deck):
         deck[k] = temp
     return deck
     ### END STEP 1
+    
 def deal(deck1,deck2):
     ### STEP 2
 	deck2.append(deck1.pop(0))
-    ### END STEP 2
+    ### END STEP 2 
+    
+def switch(argument):
+    switcher = {
+        "A": 1,
+        "2": 2,
+        "3": 3,
+        "4": 4,
+        "5": 5,
+        "6": 6,
+        "7": 7,
+        "8": 8,
+        "9": 9,
+        "10": 10,
+        "J": 11,
+        "Q": 12,
+        "K": 13
+        }
+    if argument[:-1] in switcher.keys():
+        return switcher.get(argument[:-1])
+    else:
+        return "Invalid card!"
+    
+def compare_card(p1Card, p2Card):
+    ### STEP 3
+
+    ### END STEP 3
+    
 if __name__ == '__main__':
 	# Starter Code 1
     deck = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS",

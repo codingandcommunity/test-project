@@ -1,5 +1,7 @@
 import unittest
 import sys
+import random
+random.seed(2)
 sys.path.insert(0,"..")
 import deck as d
 class MyTest(unittest.TestCase):
@@ -31,6 +33,12 @@ class MyTest(unittest.TestCase):
 		#Checks to see if the deck items are altered 
 		deck.sort()
 		self.assertEquals(deck, ["A","B","C"])
+	#Using a random seed checks to see if shuffle works
+	def test_random(self):
+	    deck = ["A", "B", "C", "D", "E", "F"]
+	    temp = ['B' , 'D', 'F', 'E', 'C', 'A']
+	    d.shuffle(deck)
+	    self.assertEquals(deck,temp )
 
 		
 

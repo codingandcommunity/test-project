@@ -7,7 +7,7 @@ class MyTest(unittest.TestCase):
     def setUp(self):
         pass
     #Checks to see if two cards are shuffled by making sure they are not the exact same at least once out of 30 tries
-    def test_TwoCards(self):
+    def test_Two_Cards(self):
         deck = ["A", "B"]
         notDifferent = True
         i = 0
@@ -20,7 +20,7 @@ class MyTest(unittest.TestCase):
         deck.sort()
         self.assertEquals(deck, ["A","B"])
     #Prove that all combinations are equal
-    def test_ThreeCards(self):
+    def test_Three_Cards(self):
         deck = ["A", "B", "C"]
         inRange = True
         i = 0
@@ -49,7 +49,7 @@ class MyTest(unittest.TestCase):
         #Checks to see if the deck items are altered 
         deck.sort()
         self.assertEquals(deck, ["A","B","C"])
-    def test_Full_deck(self):
+    def test_Full_Deck(self):
         deck = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS",
         "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
         "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC",

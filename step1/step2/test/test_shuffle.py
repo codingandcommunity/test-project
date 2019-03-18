@@ -25,7 +25,6 @@ class MyTest(unittest.TestCase):
         #Checks to see if the deck items are altered 
         deck.sort()
         self.assertEquals(deck, ["A","B"])
-    #Checks to see if three cards are shuffled by making sure they are not the exact same at least once out of 40 tries
     #Prove that all combinations are equal
     def test_ThreeCards(self):
         deck = ["A", "B", "C"]
@@ -54,9 +53,9 @@ class MyTest(unittest.TestCase):
         	    inRange = False
         for r in range(6):
             print( str(combos[r]) + "<1400")
+        self.assertEquals(inRange, True)
         #Checks to see if the deck items are altered 
         deck.sort()
-        self.assertEquals(inRange, True)
         self.assertEquals(deck, ["A","B","C"])
 
         

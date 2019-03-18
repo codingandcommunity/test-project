@@ -29,27 +29,48 @@ class MyTest(unittest.TestCase):
     #Prove that all combinations are equal
     def test_ThreeCards(self):
         deck = ["A", "B", "C"]
-        notDifferent = True
+        inRange = True
         i = 0
-        a = 0
-        b = 0
-        c = 0
+        combos = list()
+        for k in range(6):
+            combos.append(0)
         while(i<1000):
-            if(d.shuffle(deck) != ["A", "B", "C"]):
-                notDifferent = False
-                a = a + 1
-            if(d.shuffle(deck) == ["B", "A", "C"]):
-            	b = b +1
-            if(d.shuffle(deck) == ["C", "A", "B"]):
-                c = c+1
+            deck  = d.shuffle(deck)
+            if(deck == ["A", "B", "C"]):
+                combos[0] = combos[0] + 1
+            elif(deck == ["A", "C", "B"]):
+                combos[1] = combos[1] + 1
+            elif(deck == ["B", "A", "C"]):
+                combos[2] = combos[2] + 1
+            elif(deck == ["B", "C", "A"]):
+                combos[3] = combos[3] + 1
+            elif(deck == ["C", "B", "A"]):
+                combos[4] = combos[4] + 1
+            elif(deck == ["C", "A", "B"]):
+                combos[5] = combos[5] + 1
             i += 1
-        print("a: " +str(a)+ "    b: " + str(b)+ "    c:"+str(c))
-        self.assertEquals(notDifferent,False)
+        for j in range(6):
+        	if(combos[j]<50 or combos[j]>282):
+        	    inRange = False
+        for r in range(6):
+            print( str(combos[r]) + "<1400")
         #Checks to see if the deck items are altered 
         deck.sort()
+        self.assertEquals(inRange, True)
         self.assertEquals(deck, ["A","B","C"])
 
         
 
 if __name__ == '__main__':
     unittest.main()
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    

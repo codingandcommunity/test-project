@@ -49,8 +49,59 @@ def compare_card(p1Card, p2Card):
     
 def war(p1hand, p2hand):
     ### STEP 4
+    p1size = len(p1hand)
+    p2size = len(p2hand)
     
+    ###Throw down 4 cards for war from p1hand
+    if p1size >= 4:
+        hand1list = p1hand[:4]
+        i = 0
+        while i < 4:
+            del p1hand[0] ###remove cards from hand
+            i+=1
+    elif p1size < 4:
+        if p1size > 0:
+            hand1list = p1hand
+        else:
+            print("Hand1 does not have enough cards")
+            return 2
+    
+    ###Throw down 4 cards for war from p2hand
+    if p2size >= 4:
+        hand2list = p2hand[:4]
+        i = 0
+        while i < 4:
+            del p2hand[0] ###remove cards from hand
+            i+=1
+    elif p2size < 4:
+        if p2size > 0:
+            hand2list = p2hand
+        else:
+            print("Hand2 does not have enough cards")
+            return 1
+      
+    result = compare_card(hand1list[-1], hand2list[-1])
+    
+    if result == 1:
+        return 1
+    elif result == 2:
+        return 2
+    elif result == 3:
+        if p1size > 0 and p2size > 0:
+            return war(p1hand, p2hand) ###call the war function again if tied
+        else:
+            if p1size == 0:
+                print("Hand1 does not have enough cards to continue")
+                return 2
+            elif p2size == 0:
+                print("Hand2 does not have enough cards to continue")
+                return 1    
     ### END STEP 4
+    
+def print_table():
+    ### STEP 5
+    pass
+    ### END STEP 5
     
 if __name__ == '__main__':
 	# Starter Code 1

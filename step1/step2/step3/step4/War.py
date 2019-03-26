@@ -59,6 +59,8 @@ def switch(argument):
         return "Invalid card!"
     
 def compare_card(p1Card, p2Card):
+    a = switch(p1Card)
+    b = switch(p2Card)
     if switch(p1Card) > switch(p2Card):
         return 1
     elif switch(p1Card) < switch(p2Card):
@@ -132,7 +134,7 @@ def war(p1hand, p2hand):
 #test1 = ["10S", "1S", "2H", "3D", "1H", "2C", "3D", "4S", "5H", "6C", "7D", "8S", "9H", "10C", "JD", "QS", "KH", "1C", "2D", "3S", "4H", "5C", "6D", "8S"]
 #test2 = ["10S", "1S", "2H", "3D", "1H", "2C", "3D", "4S", "5H", "6C", "7D", "8S", "9H", "10C", "JD", "QS", "KH", "1C", "2D", "3S", "4H", "5C", "6D", "7S"]
 
-test1 = ["1D"]
+test1 = ["AD"]
 test2 = ["2D"]
 
 print(war(test1, test2))

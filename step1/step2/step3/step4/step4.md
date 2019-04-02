@@ -1,2 +1,2 @@
 # Step 4
-Now you must write the turn function.
+Now you must write the war function.

@@ -55,7 +55,7 @@ def turn(players):
     ### STEP 4
     p1 = players[0]
     p2 = players[1]
-    result = compare_card(players[0][-1], players[1][-1])
+    result = compare_card(players[0][0], players[1][0])
     table = [] ###Current cards in play
     deal(p1, table)
     deal(p2, table)
@@ -64,14 +64,14 @@ def turn(players):
     if result == 1:
         deal(table, p1)
         deal(table, p1)
-        print("p1" + str(p1))
-        print("p2" + str(p2))
+        ###print("p1" + str(p1))
+        ###print("p2" + str(p2))
         return 1
     elif result == 2:
         deal(table, p2)
         deal(table, p2)
-        print("p1" + str(p1))
-        print("p2" + str(p2))
+        ###print("p1" + str(p1))
+        ###print("p2" + str(p2))
         return 2
     elif result == 3:
 
@@ -191,9 +191,9 @@ def play_game():
     while True:
         turn(players)
         if len(players[0]) == 0:
-            return 1
-        elif len(players[1]) == 0:
             return 2
+        elif len(players[1]) == 0:
+            return 1
         ### END STEP 5
     
     
@@ -225,6 +225,7 @@ if __name__ == '__main__':
     for i in range(2):
         print("Hand %d:" % (i), players[i])
     '''
+    
     '''
     winner = play_game()
     if winner == 1:
@@ -236,12 +237,15 @@ if __name__ == '__main__':
     players = list()
     players.append(list())
     players.append(list())
-    players[0] = ["KS", "QH"]
-    players[1] = ["2D", "4C"]
+    players[0] = ["KS", "QH", "5S"]
+    players[1] = ["2D", "6C", "6H"]
+    
     
     winner = play_game()
     if winner == 1:
         print("Player2 won!")
     elif winner == 2:
-        print("Player1 won!")    
+        print("Player1 won!")  
+    
+    
     

@@ -47,9 +47,9 @@ def compare_card(p1Card, p2Card):
         return 3    
     ### END STEP 3
     
-def war(p1hand, p2hand):
+def turn(p1hand, p2hand):
     ### STEP 4
-    
+    pass
     ### END STEP 4
     
 if __name__ == '__main__':

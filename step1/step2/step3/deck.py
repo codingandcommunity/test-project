@@ -39,7 +39,7 @@ def switch(argument):
     
 def compare_card(p1Card, p2Card):
     ### STEP 3
-
+    pass
     ### END STEP 3
     
 if __name__ == '__main__':

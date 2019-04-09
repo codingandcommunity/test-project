@@ -49,71 +49,77 @@ def compare_card(p1Card, p2Card):
     
 def turn(p1hand, p2hand):
     ### STEP 4
-    result = compare_card(p1hand[-1], p2hand[-1])
+    p1 = players[0]
+    p2 = players[1]
+    result = compare_card(players[0][0], players[1][0])
     table = [] ###Current cards in play
-    table.append(p1hand[-1])
-    table.append(p2hand[-1])
-
+    deal(p1, table)
+    deal(p2, table)
+    print_table(table[-2], table[-1])
+    
     if result == 1:
-        p1hand = p1hand + table
+        deal(table, p1)
+        deal(table, p1)
+        ###print("p1" + str(p1))
+        ###print("p2" + str(p2))
         return 1
     elif result == 2:
-        p2hand = p2hand + table
+        deal(table, p2)
+        deal(table, p2)
+        ###print("p1" + str(p1))
+        ###print("p2" + str(p2))
         return 2
     elif result == 3:
 
-
         while True:
-            p1size = len(p1hand)
-            p2size = len(p2hand)
+            p1size = len(players[0])
+            p2size = len(players[1])
 
             if (p1size == 0 and p2size == 0):
                 print("Neither player has enough cards!")
                 return 4
 
-            ###Throw down 4 cards for war from p1hand
+            ###Throw down 4 cards for war from players[0]
             if p1size >= 4:
-                hand1list = p1hand[:4]
+                hand1list = p1[:4]
                 table = table + hand1list
                 i = 0
                 while i < 4:
-                    del p1hand[0] ###remove cards from hand
+                    del p1[0] ###remove cards from hand
                     i+=1
             elif p1size < 4:
                 if p1size > 0:
-                    hand1list = p1hand
+                    hand1list = p1
                     table = table + hand1list
                 else:
                     print("Hand1 does not have enough cards")
-                    p2hand = p2hand + table
+                    p2 = p2 + table
                     return 2
 
-
-            ###Throw down 4 cards for war from p2hand
+            ###Throw down 4 cards for war from players[1]
             if p2size >= 4:
-                hand2list = p2hand[:4]
+                hand2list = p2[:4]
                 table = table + hand2list
                 i = 0
                 while i < 4:
-                    del p2hand[0] ###remove cards from hand
+                    del p2[0] ###remove cards from hand
                     i+=1
             elif p2size < 4:
                 if p2size > 0:
-                    hand2list = p2hand
+                    hand2list = p2
                     table = table + hand2list
                 else:
                     print("Hand2 does not have enough cards")
-                    p1hand = p1hand + table
+                    p1 = p1 + table
                     return 1
 
-
-
             result = compare_card(hand1list[-1], hand2list[-1])
+            print_table(hand1list[-1], hand2list[-1])	    
             if result == 1:
-                p1hand = p1hand + table
+                p1 = p1 + table
                 return 1
             elif result == 2:
-                p2hand = p2hand + table
+                p2 = p2 + table
                 return 2
             elif result == 3:
                 if p1size > 0 and p2size > 0:
@@ -121,13 +127,13 @@ def turn(p1hand, p2hand):
                 else:
                     if p1size == 0:
                         print("Hand1 does not have enough cards to continue")
-                        p2hand = p2hand + table
+                        p2 = p2 + table
                         return 2
                     elif p2size == 0:
                         print("Hand2 does not have enough cards to continue")
-                        p1hand = p1hand + table
+                        p1 = p1 + table
                         return 1    
-    ### END STEP 4
+    ### END STEP 4    
     
 def print_table(hand1card, hand2card):
     if hand1card[-1] == "C":

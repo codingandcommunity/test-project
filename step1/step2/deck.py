@@ -10,10 +10,12 @@ def shuffle(deck):
         deck[k] = temp
     return deck
     ### END STEP 1
+    
 def deal(deck1,deck2):
     ### STEP 2
 	pass
     ### END STEP 2
+    
 if __name__ == '__main__':
 	# Starter Code 1
     deck = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS",

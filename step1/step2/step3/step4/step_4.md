@@ -8,9 +8,12 @@ jump to: @step5
 ## STEP 4
 ---
 
-Congrats on finishing Step 3! Now let's create the Turn function.  This function should be able to take in each player's deck,
+Congrats on finishing Step 3! Now let's create the turn() function.  This function should be able to take in each player's deck,
 compare the top cards, and determine a winner. If there is a tie in the current cards being played, this function should also
-be able to follow the rules of war to break the tie. 
+be able to follow the rules of war to break the tie.
+
+We have also created the function, print_table(), for you to be able to include in turn() so that you may print ASCII art to represent
+the two current cards in play. You may simply use this function by calling, "print_table(player1's card, player2's card)."
 
 
 ---

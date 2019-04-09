@@ -51,6 +51,53 @@ def compare_card(p1Card, p2Card):
     ### END STEP 3
     
     
+def print_table(hand1card, hand2card):
+    if hand1card[-1] == "C":
+        suit = "\u2663"
+    elif hand1card[-1] == "S":
+        suit = "\u2660"
+    elif hand1card[-1] == "D":
+        suit = "\u2666"
+    elif hand1card[-1] == "H":
+        suit = "\u2665"
+        
+    if hand2card[-1] == "C":
+        suit2 = "\u2663"
+    elif hand2card[-1] == "S":
+        suit2 = "\u2660"
+    elif hand2card[-1] == "D":
+        suit2 = "\u2666"
+    elif hand2card[-1] == "H":
+        suit2 = "\u2665"
+        
+    if len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 1:
+        topstring = ("| {}       |         | {}       |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 1:
+        topstring = ("| {}      |         | {}       |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 2:
+        topstring = ("| {}       |         | {}      |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 2:
+        topstring = ("| {}      |         | {}      |").format(hand1card[:-1], hand2card[:-1])
+        
+    if len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 1:
+        botstring = ("|       {} |         |       {} |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 1:
+        botstring = ("|      {} |         |       {} |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 2:
+        botstring = ("|        {}|         |      {} |").format(hand1card[:-1], hand2card[:-1])
+    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 2:
+        botstring = ("|      {} |         |      {} |").format(hand1card[:-1], hand2card[:-1])
+        
+    d = "\u2500"
+    print("\u250C",d,d,d,d,"\u2510"+"         "+"\u250C",d,d,d,d,"\u2510")
+    print(topstring)
+    print("|         |         |         |")
+    print("|    {}    |   VS.   |    {}    |".format(suit, suit2))
+    print("|         |         |         |")
+    print(botstring)
+    print("\u2514",d,d,d,d,"\u2518"+"         "+"\u2514",d,d,d,d,"\u2518")    
+    
+    
 def turn(players):
     ### STEP 4
     p1 = players[0]
@@ -140,52 +187,6 @@ def turn(players):
     ### END STEP 4
     
     
-def print_table(hand1card, hand2card):
-    if hand1card[-1] == "C":
-        suit = "\u2663"
-    elif hand1card[-1] == "S":
-        suit = "\u2660"
-    elif hand1card[-1] == "D":
-        suit = "\u2666"
-    elif hand1card[-1] == "H":
-        suit = "\u2665"
-        
-    if hand2card[-1] == "C":
-        suit2 = "\u2663"
-    elif hand2card[-1] == "S":
-        suit2 = "\u2660"
-    elif hand2card[-1] == "D":
-        suit2 = "\u2666"
-    elif hand2card[-1] == "H":
-        suit2 = "\u2665"
-        
-    if len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 1:
-        topstring = ("| {}       |         | {}       |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 1:
-        topstring = ("| {}      |         | {}       |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 2:
-        topstring = ("| {}       |         | {}      |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 2:
-        topstring = ("| {}      |         | {}      |").format(hand1card[:-1], hand2card[:-1])
-        
-    if len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 1:
-        botstring = ("|       {} |         |       {} |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 1:
-        botstring = ("|      {} |         |       {} |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 1 and len(hand2card[:-1]) == 2:
-        botstring = ("|        {}|         |      {} |").format(hand1card[:-1], hand2card[:-1])
-    elif len(hand1card[:-1]) == 2 and len(hand2card[:-1]) == 2:
-        botstring = ("|      {} |         |      {} |").format(hand1card[:-1], hand2card[:-1])
-        
-    d = "\u2500"
-    print("\u250C",d,d,d,d,"\u2510"+"         "+"\u250C",d,d,d,d,"\u2510")
-    print(topstring)
-    print("|         |         |         |")
-    print("|    {}    |   VS.   |    {}    |".format(suit, suit2))
-    print("|         |         |         |")
-    print(botstring)
-    print("\u2514",d,d,d,d,"\u2518"+"         "+"\u2514",d,d,d,d,"\u2518")
-    
 def play_game():
     ### STEP 5
     while True:
@@ -225,9 +226,8 @@ if __name__ == '__main__':
     for i in range(2):
         print("Hand %d:" % (i), players[i])
     
-    
     winner = play_game()
     if winner == 1:
         print("Player 1 won!")
     elif winner == 2:
-        print("Player2 won!") 
+        print("Player2 won!")

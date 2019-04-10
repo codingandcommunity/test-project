@@ -46,19 +46,25 @@ def compare_card(p1Card, p2Card):
     elif switch(p1Card) == switch(p2Card):
         return 3    
     ### END STEP 3
-    
 def turn(p1hand, p2hand):
     ### STEP 4
     result = compare_card(p1hand[-1], p2hand[-1])
+    #print("result:  " + str(result))
     table = [] ###Current cards in play
-    table.append(p1hand[-1])
-    table.append(p2hand[-1])
-
+    deal(p1hand,table)
+    deal(p2hand,table)
+    #print(table)
     if result == 1:
-        p1hand = p1hand + table
+        deal(table,p1hand)
+        deal(table,p1hand)
+        #print(table)
+        #print("Table: " + str(table))
+        #print("P1hand: " + str(p1hand))
         return 1
     elif result == 2:
-        p2hand = p2hand + table
+        #print(table)
+        deal(table,p2hand)
+        deal(table,p2hand)
         return 2
     elif result == 3:
 

@@ -1,6 +1,6 @@
 # test-project
 This repository is part of the [RCOS Open Source Curriculum Project](https://github.com/codingandcommunity/rcos-open-source-curriculum-project). View the main repository for system-level documentation. This repository Documentation, articles and project.
-## Documentation  e
+## Documentation  
 This folder contains all documentation for developers  
 It currently holds:  
 - [How to Write Test Cases.md](https://github.com/codingandcommunity/test-project/blob/master/Documentation/How%20to%20Write%20Test%20Cases.md) This tells developers how to we write test cases for our projects. This is a good place to start for new developers.

@@ -10,7 +10,7 @@ Take the simple modified function "HelloWord(x)" in the python file "hi.py".
 It takes anything as its paramter and will always return the string "Hello World".   
 One obvious test would be to input an int, lets say 1, and check that the function returns "Hello World".
 
-##Creating a new test file
+## Creating a new test file
 Step 1:  
 Import the unitest module.  
 ```python
@@ -36,7 +36,7 @@ Now we can write a test case in the class!
 def test_Integer(self):  
     self.assertEquals(hi.HelloWorld(1),"Hello World") 
 ```
-*Important* your test case must start with "test_" otherwise it will not register as a test case   
+**Important** your test case must start with "test_" otherwise it will not register as a test case   
 Step 5:  
 We have to add the call and add the __name__=='main' guard
 ```python

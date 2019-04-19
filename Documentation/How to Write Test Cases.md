@@ -13,21 +13,29 @@ One obvious test would be to input an int, lets say 1, and check that the functi
 ##Creating a new test file
 Step 1:  
 Import the unitest module.  
-**import unittest**  
+```python
+import unittest  
+```
   
 Step 2:  
 Because of the structure of Projects we need to change directories to back out of the test structures. First we have to import system and then set the path. ".." backs out once. If the testing file is in the same directory as the file to be tested then you can ignore this step  
-**import sys**  
-**sys.path.insert(0,"..")** 
+```python
+import sys  
+sys.path.insert(0,"..") 
+```
   
 Step 3:  
-Next we need to set up the test class.  
-**class MyTest(unittest.TestCase):**
+Next we need to set up the test class. 
+```python
+class MyTest(unittest.TestCase):
+```
 
 Step 4:  
 Now we can write a test case in the class!  
-**def test_Integer(self):**  
-&nbsp;&nbsp;&nbsp;&nbsp;**self.assertEquals(hi.HelloWorld(1),"Hello World")**   
+```python
+def test_Integer(self):  
+    self.assertEquals(hi.HelloWorld(1),"Hello World") 
+```
 *Important* your test case must start with "test_" otherwise it will not register as a test case   
  
 Step 5:  
@@ -37,16 +45,17 @@ Keep writing new test cases. It is important to get to as close to 100% code cov
  
 To write a new test case just repeat Step 4 change the name and test something new. 
    
-##TLDR 
-Your file should look something like this:  
-**import unittest**  
-**import sys**  
-**sys.path.insert(0,"..")**  
-**class MyTest(unittest.TestCase):**  
-&nbsp;&nbsp;&nbsp;&nbsp;**def test_Integer(self):**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**self.assertEquals(hi.HelloWorld(1),"Hello World)"**   
-&nbsp;&nbsp;&nbsp;&nbsp;**def test_String(self):**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**self.assertEquals(hi.HelloWorld("hi"),"Hello World)"**  
-&nbsp;&nbsp;&nbsp;&nbsp;**def test_List(self):**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**Foo = list()**  
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;**self.assertEquals(hi.HelloWorld(Foo),"Hello World")**    
+## TLDR 
+Your file should look something like this:
+```python
+import unittest  
+import sys  
+sys.path.insert(0,"..")  
+class MyTest(unittest.TestCase):  
+    def test_Integer(self):  
+        self.assertEquals(hi.HelloWorld(1),"Hello World)"   
+    def test_String(self):  
+        self.assertEquals(hi.HelloWorld("hi"),"Hello World)"  
+    def test_List(self):  
+        Foo = list()  
+        self.assertEquals(hi.HelloWorld(Foo),"Hello World")    

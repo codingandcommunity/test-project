@@ -4,12 +4,12 @@ A series of test markdown articles for use in testing the backend for the compan
 ## How articles should be structured
 The markdown file of the article should contain a header which will contain all metadata of the article ie. title, author, date,... and even links to other articles such as the next and the previous article. The metadata should be seperated from article content by three stars. ie.
 
-title: Comments in Python
-author: John Smith
-date: 4/2/19
-next: [Step 2](@step_2.md) ///links not creating within "---"
-prev: [Intro](@intro.md)
-jump to: @step1.md
+title: Comments in Python  
+author: John Smith  
+date: 4/2/19  
+next: [Step 2](@step_2.md) ///links not creating within "---"  
+prev: [Intro](@intro.md)  
+jump to: @step1.md  
 
 ***
 

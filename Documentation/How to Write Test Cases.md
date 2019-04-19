@@ -38,7 +38,7 @@ def test_Integer(self):
 ```
 **Important** your test case must start with "test_" otherwise it will not register as a test case   
 Step 5:  
-We have to add the call and add the __name__=='main' guard
+We have to add the call and add the name == main guard
 ```python
 if __name__ == '__main__':
     unittest.main()

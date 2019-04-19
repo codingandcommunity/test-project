@@ -37,8 +37,13 @@ def test_Integer(self):
     self.assertEquals(hi.HelloWorld(1),"Hello World") 
 ```
 *Important* your test case must start with "test_" otherwise it will not register as a test case   
- 
 Step 5:  
+We have to add the call and add the __name__=='main' guard
+```python
+if __name__ == '__main__':
+    unittest.main()
+```
+Step 6:  
 If we run the python file now it will test the python function and will report which tests have failed or passed.   
 ## Adding new test cases   
 Keep writing new test cases. It is important to get to as close to 100% code coverage as you can. Another way to think of other test cases is to try and input values and try to get unexpected values. A different idea is to test random data this can be hard to verify sometimes but can be a very effective.  
@@ -58,4 +63,7 @@ class MyTest(unittest.TestCase):
         self.assertEquals(hi.HelloWorld("hi"),"Hello World)"  
     def test_List(self):  
         Foo = list()  
-        self.assertEquals(hi.HelloWorld(Foo),"Hello World")    
+        self.assertEquals(hi.HelloWorld(Foo),"Hello World")
+if __name__ == '__main__':
+    unittest.main()
+```

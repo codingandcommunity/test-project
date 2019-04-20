@@ -121,7 +121,7 @@ def turn(players):
         ###print("p2" + str(p2))
         return 2
     elif result == 3:
-
+        print("War!")
         while True:
             p1size = len(players[0])
             p2size = len(players[1])
@@ -140,8 +140,12 @@ def turn(players):
                     i+=1
             elif p1size < 4:
                 if p1size > 0:
-                    hand1list = p1
+                    hand1list = p1[:]
                     table = table + hand1list
+                    i = 0
+                    while i < p1size:
+                        del p1[0] ###remove cards from hand
+                        i+=1
                 else:
                     print("Hand1 does not have enough cards")
                     p2 = p2 + table
@@ -157,8 +161,12 @@ def turn(players):
                     i+=1
             elif p2size < 4:
                 if p2size > 0:
-                    hand2list = p2
+                    hand2list = p2[:]
                     table = table + hand2list
+                    i = 0
+                    while i < p2size:
+                        del p2[0] ###remove cards from hand
+                        i+=1		    
                 else:
                     print("Hand2 does not have enough cards")
                     p1 = p1 + table
@@ -168,9 +176,11 @@ def turn(players):
             print_table(hand1list[-1], hand2list[-1])	    
             if result == 1:
                 p1 = p1 + table
+                players[0] = p1
                 return 1
             elif result == 2:
                 p2 = p2 + table
+                players[1] = p2
                 return 2
             elif result == 3:
                 if p1size > 0 and p2size > 0:
@@ -200,7 +210,7 @@ def play_game():
     
 if __name__ == '__main__':
 	# Starter Code 1
-    
+    '''
     deck = ["AS", "2S", "3S", "4S", "5S", "6S", "7S", "8S", "9S", "10S", "JS", "QS", "KS",
         "AH", "2H", "3H", "4H", "5H", "6H", "7H", "8H", "9H", "10H", "JH", "QH", "KH",
         "AC", "2C", "3C", "4C", "5C", "6C", "7C", "8C", "9C", "10C", "JC", "QC", "KC",
@@ -225,6 +235,14 @@ if __name__ == '__main__':
     print("Shuffled:")
     for i in range(2):
         print("Hand %d:" % (i), players[i])
+    '''
+    
+    players = list()
+    players.append(list())
+    players.append(list())
+
+    players[0] = ["KH", "2D", "8C", "3S", "9H", "7D", "6H"]
+    players[1] = ["QH", "5S", "9S", "AC", "6D", "7S", "5D"]
     
     winner = play_game()
     if winner == 1:

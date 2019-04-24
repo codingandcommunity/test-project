@@ -11,7 +11,7 @@ This folder contains articles for students to refer to. It tells the student how
 Project contains the actual code, "Steps" markdowns, and test cases
 
 ## For New Contributors
-Welcome! If you would like to contribute to this project contact one of the contributors above. A good place to start would be to write test cases for functions or write an article for a specfic part or function of python. For help on this refer to our [How to Write Test Cases.md](https://github.com/codingandcommunity/test-project/blob/master/Documentation/How%20to%20Write%20Test%20Cases.md) or you can refer to [How to Wrte Articles.md](https://github.com/codingandcommunity/test-project/blob/master/Documentation/How%20to%20Write%20Articles.md).  
+Welcome! If you would like to contribute to this project contact one of the contributors below. A good place to start would be to write test cases for functions or write an article for a specfic part or function of python. For help on this refer to our [How to Write Test Cases.md](https://github.com/codingandcommunity/test-project/blob/master/Documentation/How%20to%20Write%20Test%20Cases.md) or you can refer to [How to Wrte Articles.md](https://github.com/codingandcommunity/test-project/blob/master/Documentation/How%20to%20Write%20Articles.md).  
 ### Contributors ###
 - [Ethan Graf](https://github.com/eagraf)
 - [Colleen Corrigan](https://github.com/collcorr72)
